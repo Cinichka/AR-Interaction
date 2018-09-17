@@ -39,9 +39,21 @@ class ViewController: UIViewController, ARSCNViewDelegate {
         )
         
         if let result = hitTestResult.first {
-            _ = result
-            print("Пересеклись с поверхностью")
+            addHoop(result: result)
         }
+    }
+    
+    func addHoop(result: ARHitTestResult) {
+        let hoopScene = SCNScene(named: "art.scnassets/hoop.scn")
+        
+        guard let hoopNode = hoopScene?.rootNode.childNode(
+            withName: "Hoop", recursively: false
+        ) else { return }
+        
+        let position = result.worldTransform.columns.3
+        hoopNode.position = SCNVector3(position.x, position.y, position.z)
+        
+        sceneView.scene.rootNode.addChildNode(hoopNode)
     }
     
     func createWall(planeAnchor: ARPlaneAnchor) -> SCNNode {
