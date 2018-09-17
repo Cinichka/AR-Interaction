@@ -42,7 +42,7 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="SZV-WD-TEh" sceneMemberID="firstResponder"/>
                 <tapGestureRecognizer id="r3j-vS-T5e">
                     <connections>
-                        <action selector="screenTapped:" destination="BV1-FR-VrT" id="ikf-JC-gdy"/>
+                        <action selector="screenTapped:" destination="BV1-FR-VrT" id="wUd-lx-HSN"/>
                     </connections>
                 </tapGestureRecognizer>
             </objects>
