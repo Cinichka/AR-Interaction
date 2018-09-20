@@ -99,7 +99,12 @@ class ViewController: UIViewController, ARSCNViewDelegate {
         
         let physicsBody = SCNPhysicsBody(
             type: .dynamic,
-            shape: SCNPhysicsShape(node: ball)
+            shape: SCNPhysicsShape(
+                node: ball,
+                options: [
+                    SCNPhysicsShape.Option.collisionMargin: 0.01
+                ]
+            )
         )
         ball.physicsBody = physicsBody
         
