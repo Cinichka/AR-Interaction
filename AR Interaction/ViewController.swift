@@ -86,6 +86,12 @@ class ViewController: UIViewController, ARSCNViewDelegate {
         let ball = SCNNode(geometry: SCNSphere(radius: 0.25))
         ball.geometry?.firstMaterial?.diffuse.contents = #colorLiteral(red: 0.9411764741, green: 0.4980392158, blue: 0.3529411852, alpha: 1)
         
+        let physicsBody = SCNPhysicsBody(
+            type: .dynamic,
+            shape: SCNPhysicsShape(node: ball)
+        )
+        ball.physicsBody = physicsBody
+        
         ball.transform = SCNMatrix4(frame.camera.transform)
         sceneView.scene.rootNode.addChildNode(ball)
     }
