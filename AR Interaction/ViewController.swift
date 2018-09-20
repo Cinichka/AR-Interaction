@@ -64,7 +64,10 @@ class ViewController: UIViewController, ARSCNViewDelegate {
             type: .static,
             shape: SCNPhysicsShape(
                 node: hoopNode,
-                options: [:]
+                options: [
+                    SCNPhysicsShape.Option.type:
+                    SCNPhysicsShape.ShapeType.concavePolyhedron
+                ]
             )
         )
         
